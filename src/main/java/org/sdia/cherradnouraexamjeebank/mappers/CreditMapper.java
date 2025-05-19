@@ -3,6 +3,7 @@ package org.sdia.cherradnouraexamjeebank.mappers;
 import org.sdia.cherradnouraexamjeebank.DTOs.CreditDTO;
 import org.sdia.cherradnouraexamjeebank.entities.Client;
 import org.sdia.cherradnouraexamjeebank.entities.Credit;
+import org.sdia.cherradnouraexamjeebank.entities.CreditPersonnel;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,7 +23,7 @@ public class CreditMapper {
     }
 
     public static Credit toEntity(CreditDTO dto, Client client) {
-        Credit credit = new Credit();
+        Credit credit = new CreditPersonnel();
         credit.setId(dto.getId());
         credit.setDateDemande(dto.getDateDemande());
         credit.setStatut(dto.getStatut());

@@ -27,6 +27,20 @@ public class ClientServiceImpl implements ClientService {
         client = clientRepository.save(client);
         return ClientMapper.toDTO(client);
     }
+    @Override
+    public ClientDTO saveClient(ClientDTO clientDTO) {
+        Client client = new Client();
+        client.setNom(clientDTO.getNom());
+        client.setEmail(clientDTO.getEmail());
+
+        Client saved = clientRepository.save(client);
+
+        ClientDTO dto = new ClientDTO();
+        dto.setId(saved.getId());
+        dto.setNom(saved.getNom());
+        dto.setEmail(saved.getEmail());
+        return dto;
+    }
 
     @Override
     public ClientDTO getClientById(Long id) {

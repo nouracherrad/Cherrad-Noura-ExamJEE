@@ -9,5 +9,7 @@ public interface ClientService {
     ClientDTO getClientById(Long id);
     List<ClientDTO> getAllClients();
     void deleteClient(Long id);
+    ClientDTO saveClient(ClientDTO clientDTO);
+
 }
 
